@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AçıkWord - Telifsiz Kelime İşlemci</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="ust-panel">
+    <div class="belge-bilgi">
+      <input type="text" id="belgeBaslik" value="Adsız Belge" aria-label="Belge Başlığı">
+      <span id="durumMesaji">Hazır</span>
+    </div>
+
+    <nav class="arac-cubugu" aria-label="Biçimlendirme Araçları">
+      <button type="button" data-komut="bold" title="Kalın"><b>K</b></button>
+      <button type="button" data-komut="italic" title="İtalik"><i>İ</i></button>
+      <button type="button" data-komut="underline" title="Altı Çizili"><u>A</u></button>
+      <button type="button" data-komut="strikeThrough" title="Üstü Çizili"><s>Ü</s></button>
+      
+      <select id="yaziTipi" title="Yazı Tipi">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Times New Roman">Times New Roman</option>
+      </select>
+
+      <select id="yaziBoyutu" title="Yazı Boyutu">
+        <option value="3">Normal</option>
+        <option value="5">Büyük Başlık</option>
+        <option value="4">Alt Başlık</option>
+        <option value="2">Küçük</option>
+      </select>
+
+      <input type="color" id="yaziRengi" title="Yazı Rengi" value="#000000">
+
+      <button type="button" data-komut="justifyLeft" title="Sola Hizala">Sol</button>
+      <button type="button" data-komut="justifyCenter" title="Ortala">Orta</button>
+      <button type="button" data-komut="justifyRight" title="Sağa Hizala">Sağ</button>
+      <button type="button" data-komut="insertUnorderedList" title="Madde İşaretli Liste">• Liste</button>
+      <button type="button" data-komut="insertOrderedList" title="Numaralı Liste">1. Liste</button>
+
+      <div class="dosya-islemleri">
+        <button type="button" id="btnSunucuKaydet" class="birincil">Sunucuya Kaydet</button>
+        <button type="button" id="btnDocIndir">.DOC İndir</button>
+        <button type="button" id="btnYazdir">Yazdır / PDF</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="calisma-alani">
+    <article id="editor" class="a4-sayfa" contenteditable="true" spellcheck="true">
+      <h1>Merhaba!</h1>
+      <p>Buraya yazmaya başlayabilirsiniz. Tüm biçimlendirme ve dosya işlemleri hiçbir harici kütüphane kullanılmadan çalışır.</p>
+    </article>
+  </main>
+
+  <footer class="alt-bilgi">
+    <span id="kelimeSayaci">Kelime: 0 | Karakter: 0</span>
+    <span>Saf HTML5, CSS3, ES6+ ve Node.js ile üretilmiştir.</span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

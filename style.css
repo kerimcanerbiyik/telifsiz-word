@@ -1,0 +1,132 @@
+:root {
+  --arka-plan: #f0f2f5;
+  --panel-renk: #ffffff;
+  --vurgu-renk: #1a73e8;
+  --sinir-renk: #dadce0;
+  --metin-renk: #202124;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--arka-plan);
+  color: var(--metin-renk);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.ust-panel {
+  background: var(--panel-renk);
+  border-bottom: 1px solid var(--sinir-renk);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.belge-bilgi {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+#belgeBaslik {
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+#belgeBaslik:focus {
+  border-color: var(--vurgu-renk);
+  outline: none;
+}
+
+#durumMesaji {
+  font-size: 13px;
+  color: #5f6368;
+}
+
+.arac-cubugu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  background: #edf2fa;
+  padding: 8px 12px;
+  border-radius: 24px;
+}
+
+.arac-cubugu button,
+.arac-cubugu select {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.arac-cubugu button:hover,
+.arac-cubugu select:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.dosya-islemleri {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.dosya-islemleri .birincil {
+  background: var(--vurgu-renk);
+  color: #fff;
+  font-weight: 500;
+}
+
+.dosya-islemleri .birincil:hover {
+  background: #1557b0;
+}
+
+.calisma-alani {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.a4-sayfa {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  padding: 25mm;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  outline: none;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.alt-bilgi {
+  background: var(--panel-renk);
+  border-top: 1px solid var(--sinir-renk);
+  padding: 8px 20px;
+  font-size: 12px;
+  color: #5f6368;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media print {
+  .ust-panel, .alt-bilgi { display: none; }
+  .calisma-alani { padding: 0; }
+  .a4-sayfa { box-shadow: none; width: 100%; }
+}
